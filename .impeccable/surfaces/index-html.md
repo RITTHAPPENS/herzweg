@@ -15,14 +15,16 @@ Grounded directions (by resonance): 1 Küchentisch-Beratung, 2 Herzweg-Linie als
 
 ## Direction contract
 
-THESIS: Herzweg24 ist der rote Faden, der eine Familie durch die Pflegesituation führt. Die Seite verweigert die übliche Pflegedienst-Landingpage aus Stockfoto-Hero, blauen Häkchen und drei gleichen Karten.
+Version 2 nach Kundenfeedback ("wirkt nach KI, nicht professionell"). Richtung vom Nutzer gewählt: ruhig und seriös. Erste Richtung (roter Faden, Stickrahmen) verworfen.
 
-OWN-WORLD: Leinen in #f2e8dc als Grund mit fühlbarer Webstruktur, eine einzige rote Garnlinie #ac5454 in der Strichsprache des Logos, Vorstich-Nähte (gestrichelte Linien) als Trenner und Kanten, Knopf- und Stickrahmen-Formen. Warme humane Grotesk für Überschriften, hochlesbare Grotesk für Text. Keine Verläufe, kein Glas.
+THESIS: Ein etablierter, vertrauenswürdiger regionaler Dienstleister. Verweigert Deko, Gimmicks und dekorierte Karten.
 
-STORY: Erster Blick: hier, in Amberg, für Ihre Mutter, in wenigen Tagen. Dann: Situationen erkennen, Ablauf verstehen, Sorgen beantwortet, Gesichter sehen, Kostenrahmen verstehen, anrufen.
+OWN-WORLD: Helle Basis, Creme als Sektionsfarbe, Rot nur für Buttons und kleine Akzente, Figtree, 8px Radius, 1px Linien, große Fotos.
 
-FIRST VIEWPORT: H1 "24-Stunden-Pflege zuhause in Amberg und der Oberpfalz", Anruf und Beratung als Buttons, großes Teamfoto im Stickrahmen-Oval, aus dem der rote Faden herausläuft.
+STORY: Wer, wo, wie schnell. Dann Situationen, Leistungen, Kurzzeitbetreuung, Ablauf, Sorgen, Team, Kosten, Region, FAQ, Kontakt.
 
-SIGNATURE: Der rote Faden zieht sich beim Scrollen durch die Seite und verbindet die drei Ablaufschritte wie Stiche.
+FIRST VIEWPORT: Rundes Logo groß und mittig, H1 mit Amberg und Oberpfalz, zwei Buttons, breites Foto darunter.
 
-RISK: Stickerei kann altbacken wirken; Gegenmittel ist moderne Typografie, viel Luft und strenge Zurückhaltung beim Ornament.
+SIGNATURE: Keine Animation. Die Fotos und das Logo tragen.
+
+RISK: Kann generisch wirken, bis die echten Teamfotos eingesetzt sind.
