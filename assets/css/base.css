@@ -1,0 +1,147 @@
+/* Herzweg24 Startseite, gemeinsame Basis der drei Entwürfe */
+
+@font-face { font-family: "Figtree"; src: url("../fonts/figtree-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("../fonts/figtree-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("../fonts/figtree-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("../fonts/figtree-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Lexend"; src: url("../fonts/lexend-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Lexend"; src: url("../fonts/lexend-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Lexend"; src: url("../fonts/lexend-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Lexend"; src: url("../fonts/lexend-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Albert Sans"; src: url("../fonts/albert-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Albert Sans"; src: url("../fonts/albert-sans-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Albert Sans"; src: url("../fonts/albert-sans-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Albert Sans"; src: url("../fonts/albert-sans-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --red: #ac5454;
+  --red-dark: #8e3f40;
+  --cream: #f2e8dc;
+  --ink: #241f1e;
+  --ink-soft: #5d5653;
+  --line: #e6dccf;
+  --bg: #fcfaf7;
+  --radius: 14px;
+  --font: "Figtree", system-ui, sans-serif;
+  --display: var(--font);
+  --wrap: min(1200px, 100% - 2.5rem);
+  /* Emil Kowalski: starke Ease-out-Kurve für UI */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; font-family: var(--font); font-size: 1.15rem; line-height: 1.65; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+::selection { background: var(--red); color: #fff; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--red-dark); text-underline-offset: .2em; }
+h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.12; letter-spacing: -.02em; text-wrap: balance; font-weight: 700; }
+h1 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.9rem); }
+h2 { font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.7rem); }
+h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -.01em; }
+p { margin: 0; text-wrap: pretty; }
+.wrap { width: var(--wrap); margin-inline: auto; }
+.section { padding-block: clamp(4.5rem, 3rem + 5vw, 8rem); }
+.lead { font-size: 1.22rem; color: var(--ink-soft); max-width: 58ch; }
+.nowrap { white-space: nowrap; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.accent { color: var(--red); }
+
+/* Buttons: Druck-Feedback nach Emil Kowalski (scale 0.97, 140ms) */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+  min-height: 3.5rem; padding: .85rem 1.6rem; border-radius: 999px; white-space: nowrap;
+  font: 600 1.06rem/1.1 var(--font); text-decoration: none; border: 1.5px solid transparent; cursor: pointer;
+  transition: transform 140ms var(--ease-out), background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+.btn .ph { font-size: 1.25rem; }
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--red-dark); color: #fff; }
+.btn-ghost { background: transparent; color: var(--ink); border-color: rgb(36 31 30 / .25); }
+.btn-light { background: #fff; color: var(--red-dark); }
+.btn-outline-light { background: transparent; color: #fff; border-color: rgb(255 255 255 / .7); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover { background: #7a3536; }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-light:hover { background: var(--cream); }
+  .btn-outline-light:hover { background: rgb(255 255 255 / .12); }
+}
+
+/* Header mit Logo */
+.site-header { position: sticky; top: 0; z-index: 30; background: rgb(255 255 255 / .94); backdrop-filter: blur(10px); border-bottom: 1px solid rgb(36 31 30 / .07); }
+.header-inner { display: flex; align-items: center; gap: 2rem; min-height: 4.75rem; }
+.brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--ink); flex-shrink: 0; }
+.brand img { width: 58px; height: 58px; mix-blend-mode: multiply; }
+.brand-text { display: grid; line-height: 1.1; }
+.brand-text small { font-size: .78rem; color: var(--ink-soft); font-weight: 500; letter-spacing: .01em; }
+.brand-text strong { font-family: var(--display); font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; }
+.brand-text strong span { color: var(--red); }
+.main-nav { display: flex; gap: 1.8rem; margin-left: auto; }
+.main-nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 200ms ease; }
+@media (hover: hover) and (pointer: fine) { .main-nav a:hover { color: var(--red-dark); } }
+.header-phone { display: inline-flex; align-items: center; gap: .45rem; font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.header-phone .ph { color: var(--red); font-size: 1.2rem; }
+.header-cta { min-height: 2.9rem; padding: .6rem 1.2rem; font-size: .98rem; }
+.menu-toggle { display: none; margin-left: auto; background: none; border: 0; padding: .5rem; color: var(--ink); cursor: pointer; font-size: 1.8rem; }
+@media (max-width: 1120px) { .header-phone { display: none; } }
+@media (max-width: 900px) {
+  .main-nav, .header-cta { display: none; }
+  .menu-toggle { display: inline-flex; }
+  .site-header.open .main-nav { display: flex; flex-direction: column; gap: 0; position: absolute; inset: 100% 0 auto 0; background: #fff; padding: .25rem 1.25rem 1rem; border-bottom: 1px solid var(--line); }
+  .site-header.open .main-nav a { padding: .9rem 0; border-bottom: 1px solid var(--line); font-size: 1.1rem; }
+}
+
+/* Gemeinsame Bausteine */
+.check-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.check-list li { display: flex; gap: .7rem; align-items: baseline; }
+.check-list .ph { color: var(--red); flex-shrink: 0; transform: translateY(2px); }
+.photo { border-radius: var(--radius); overflow: hidden; background: var(--cream); }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo-slot { border-radius: var(--radius); background: var(--cream); display: grid; place-items: center; color: var(--ink-soft); font-size: .95rem; aspect-ratio: 3 / 4; }
+
+.faq-list details { border-top: 1px solid var(--line); }
+.faq-list details:last-child { border-bottom: 1px solid var(--line); }
+.faq-list summary { list-style: none; cursor: pointer; padding: 1.3rem 0; display: flex; justify-content: space-between; gap: 1rem; align-items: center; font-weight: 600; font-size: 1.12rem; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary .ph { color: var(--red); font-size: 1.2rem; transition: transform 200ms var(--ease-out); flex-shrink: 0; }
+.faq-list details[open] summary .ph { transform: rotate(180deg); }
+.faq-list .answer { padding: 0 0 1.3rem; color: var(--ink-soft); max-width: 62ch; }
+
+.site-footer { padding-block: 3.5rem; font-size: 1rem; color: var(--ink-soft); border-top: 1px solid var(--line); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+.footer-grid h3 { font-size: 1rem; margin-bottom: .7rem; color: var(--ink); }
+.footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.footer-grid a { color: var(--ink-soft); text-decoration: none; }
+.footer-grid a:hover { color: var(--red-dark); }
+.footer-grid .brand { margin-bottom: 1rem; }
+.footer-bottom { margin-top: 2.25rem; padding-top: 1.2rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; justify-content: space-between; }
+.footer-bottom a { color: var(--ink-soft); }
+.footer-bottom a + a { margin-left: 1.25rem; }
+@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; } .site-footer { padding-bottom: 7rem; } }
+
+.mobile-bar { display: none; }
+@media (max-width: 900px) {
+  .mobile-bar { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: .4rem; position: fixed; inset: auto 0 0 0; z-index: 40; background: rgb(255 255 255 / .97); border-top: 1px solid var(--line); padding: .5rem .6rem calc(.5rem + env(safe-area-inset-bottom)); }
+  .mobile-bar a { display: flex; align-items: center; justify-content: center; gap: .4rem; min-height: 3.1rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .98rem; color: var(--ink); border: 1px solid var(--line); transition: transform 140ms var(--ease-out); }
+  .mobile-bar a:active { transform: scale(0.97); }
+  .mobile-bar a .ph { font-size: 1.25rem; color: var(--red); }
+  .mobile-bar a.call { background: var(--red-dark); border-color: var(--red-dark); color: #fff; }
+  .mobile-bar a.call .ph { color: #fff; }
+}
+
+/* Bewegung nach Emil Kowalski:
+   Hero beim Laden gestaffelt (Erklärung der Reihenfolge), Inhalte beim Scrollen einmal sanft einblenden.
+   Nur opacity, transform und filter; Ease-out; 60ms Staffelung. Ohne JS bleibt alles sichtbar. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rise { opacity: 0; transform: translateY(14px); filter: blur(4px); transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out), filter 700ms var(--ease-out); transition-delay: calc(var(--i, 0) * 60ms); }
+  .js .rise.in { opacity: 1; transform: none; filter: none; }
+  .js .hero-media.rise { transform: scale(0.98); transition-duration: 900ms; }
+  .js .hero-media.rise.in { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .rise { opacity: 0; transition: opacity 400ms ease; transition-delay: calc(var(--i, 0) * 40ms); }
+  .js .rise.in { opacity: 1; }
+}

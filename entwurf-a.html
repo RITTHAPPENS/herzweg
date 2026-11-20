@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>24 Stunden Pflege Amberg &amp; Oberpfalz | Herzweg24</title>
+<meta name="description" content="Liebevolle 24-Stunden-Betreuung für Ihre Angehörigen in den eigenen vier Wänden. Persönliche Beratung vor Ort im Raum Amberg. Jetzt kostenlos anfragen.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/logo-herzweg24.png">
+<link rel="stylesheet" href="assets/icons/icons.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root { --font: "Figtree", system-ui, sans-serif; --bg: #fdfbf8; }
+.hero { background: var(--cream); overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); min-height: min(720px, calc(100dvh - 4.75rem)); }
+.hero-copy { align-self: center; padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4.5rem) clamp(3rem, 6vw, 5rem) max(1.25rem, calc((100vw - 1200px) / 2)); }
+.hero-copy h1 { max-width: 17ch; font-size: clamp(2.2rem, 1.4rem + 2.4vw, 3.4rem); }
+.hero-copy .lead { margin-top: 1.4rem; max-width: 40ch; color: #4f4744; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
+.hero-media { position: relative; }
+.hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; border-bottom-left-radius: 48px; }
+.facts { background: var(--cream); padding-bottom: clamp(3rem, 5vw, 4.5rem); }
+.facts ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.facts li { background: #fff; border-radius: var(--radius); padding: 1.4rem 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: .2rem 1rem; box-shadow: 0 10px 30px -22px rgb(122 53 54 / .45); }
+.facts .ph { grid-row: span 2; font-size: 1.8rem; color: var(--red); }
+.facts strong { font-weight: 600; font-size: 1.1rem; }
+.facts span { color: var(--ink-soft); font-size: 1rem; }
+.sit-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.sit-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; }
+.sit-photos .photo:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.sit-photos .photo { aspect-ratio: 1; }
+.sit-list { margin-top: 2rem; display: grid; gap: 1.5rem; }
+.sit-list h3 { margin-bottom: .25rem; }
+.sit-list p { color: var(--ink-soft); }
+.services { background: var(--cream); }
+.services-head { max-width: 46rem; }
+.services-head .lead { margin-top: 1rem; }
+.services-grid { margin-top: 2.75rem; display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 1.25rem; align-items: stretch; }
+.svc { background: #fff; border-radius: var(--radius); padding: 1.9rem; }
+.svc h3 { margin-bottom: 1.1rem; }
+.svc-short { background: var(--red); color: #fff; border-radius: var(--radius); padding: 1.9rem; display: flex; flex-direction: column; }
+.svc-short h3 { color: #fff; font-size: 1.5rem; margin-bottom: .6rem; }
+.svc-short p { color: rgb(255 255 255 / .9); margin-bottom: 1.2rem; }
+.svc-short .check-list .ph { color: #fff; }
+.svc-short .btn { margin-top: auto; align-self: flex-start; }
+.svc-note { margin-top: 1.5rem; color: var(--ink-soft); font-size: 1rem; }
+.steps-head { text-align: center; max-width: 40rem; margin-inline: auto; }
+.steps-head .lead { margin: 1rem auto 0; }
+.steps { list-style: none; margin: 3.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; counter-reset: s; position: relative; }
+.steps::before { content: ""; position: absolute; top: 1.5rem; left: 16%; right: 16%; height: 2px; background: var(--line); }
+.steps li { counter-increment: s; text-align: center; position: relative; }
+.steps li::before { content: counter(s); display: grid; place-items: center; width: 3rem; height: 3rem; margin: 0 auto 1.2rem; border-radius: 50%; background: var(--red); color: #fff; font-weight: 700; box-shadow: 0 0 0 8px var(--bg); }
+.steps h3 { margin-bottom: .4rem; }
+.steps p { color: var(--ink-soft); max-width: 30ch; margin-inline: auto; }
+.steps-cta { text-align: center; margin-top: 3rem; }
+.qa-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.qa-grid .photo { aspect-ratio: 4 / 5; }
+.qa { margin-top: 2rem; display: grid; gap: 1.6rem; }
+.qa dt { font-weight: 600; font-size: 1.2rem; }
+.qa dd { margin: .3rem 0 0; color: var(--ink-soft); }
+.team { background: var(--cream); }
+.team-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.team-grid p + p { margin-top: 1rem; }
+.team-grid .lead { margin: 1rem 0 1.25rem; }
+.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.people figure { margin: 0; }
+.people .photo-slot { background: #fff; }
+.people figcaption { margin-top: .75rem; }
+.people strong { display: block; font-weight: 600; }
+.people span { color: var(--ink-soft); font-size: .95rem; }
+.costs-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 5rem); }
+.costs-grid .lead { margin-top: 1rem; }
+.hint { margin-top: 1.5rem; padding: 1.2rem 1.4rem; background: var(--cream); border-radius: var(--radius); color: var(--ink-soft); font-size: 1.02rem; }
+.hint strong { color: var(--ink); }
+.factors h3 { margin-bottom: 1rem; }
+.factors a { display: inline-block; margin-top: 1.3rem; font-weight: 600; }
+.area { padding-top: 0; }
+.area-box { border-top: 1px solid var(--line); padding-top: clamp(3rem, 5vw, 4.5rem); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+.area-box .lead { margin-top: 1rem; }
+.area-box .places { color: var(--ink-soft); }
+.area-box .places strong { color: var(--ink); }
+.faq { background: var(--cream); }
+.faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); }
+.faq-grid .lead { margin-top: 1rem; }
+.faq .faq-list details { border-color: rgb(36 31 30 / .12); }
+.contact { background: var(--red); color: #fff; }
+.contact-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.contact h2 { color: #fff; }
+.contact .lead { color: rgb(255 255 255 / .9); margin-top: 1rem; }
+.contact-phone { display: inline-block; margin-top: 1.6rem; font-size: clamp(2rem, 1.4rem + 2vw, 3rem); font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -.01em; }
+.contact-meta { margin-top: .5rem; color: rgb(255 255 255 / .85); font-size: 1rem; }
+.contact-meta a { color: #fff; }
+.contact-actions { display: grid; gap: .75rem; }
+.contact-actions .btn { width: 100%; }
+.contact :focus-visible { outline-color: #fff; }
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; min-height: 0; }
+  .hero-copy { padding: 2.5rem 1.25rem 2.5rem; }
+  .hero-media { aspect-ratio: 4 / 3; order: -1; }
+  .hero-media img { border-bottom-left-radius: 0; }
+  .facts { padding-top: 0; }
+  .facts ul, .services-grid, .sit-grid, .qa-grid, .team-grid, .costs-grid, .area-box, .faq-grid, .contact-inner { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; text-align: left; }
+  .steps::before { display: none; }
+  .steps li { text-align: left; display: grid; grid-template-columns: 3rem 1fr; gap: 0 1rem; }
+  .steps li::before { margin: 0; grid-row: span 2; }
+  .steps p { margin: 0; }
+  .qa-grid .photo { aspect-ratio: 4 / 3; }
+}
+</style>
+</head>
+<body class="v-a">
+<a class="sr-only" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Betreuungsdienst Herzweg24, zur Startseite">
+  <img src="assets/img/logo-herzweg24.png" width="58" height="58" alt="">
+  <span class="brand-text"><small>Betreuungsdienst</small><strong>Herzweg<span>24</span></strong></span>
+</a>
+    <nav class="main-nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a><a href="#kosten">Kosten</a><a href="#betreuungskraefte">Betreuungskräfte</a><a href="#ueber-uns">Über uns</a>
+    </nav>
+    <a class="header-phone" href="tel:+4996287409897" data-conversion="anruf"><i class="ph ph-phone" aria-hidden="true"></i>09628 7409897</a>
+    <a class="btn btn-primary header-cta" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=EPrh1cgauUe2HvMaPHXPu1EsKyl7h5tHnTXdQtuc9rlUN0JQUEFRRExWUlhVMlFURk5WVlhBMkpTNy4u" target="_blank" rel="noopener" data-conversion="formular">Rückruf anfordern</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü öffnen"><i class="ph ph-list" aria-hidden="true"></i></button>
+  </div>
+</header>
+<main id="inhalt">
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1 class="rise">24-Stunden-Pflege zuhause in <span class="accent">Amberg und der Oberpfalz</span></h1>
+      <p class="lead rise">Wir vermitteln Betreuungskräfte, die bei Ihren Angehörigen einziehen. Persönlich begleitet von uns, einer Familie aus Ammerthal.</p>
+      <div class="hero-actions rise"><a class="btn btn-primary" href="tel:+4996287409897" data-conversion="anruf"><i class="ph ph-phone" aria-hidden="true"></i>Jetzt anrufen</a><a class="btn btn-ghost" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=EPrh1cgauUe2HvMaPHXPu1EsKyl7h5tHnTXdQtuc9rlUN0JQUEFRRExWUlhVMlFURk5WVlhBMkpTNy4u" target="_blank" rel="noopener" data-conversion="formular">Rückruf anfordern</a></div>
+    </div>
+    <div class="hero-media rise"><img src="assets/img/beratung-tisch.jpg" width="1800" height="1200" alt="Tochter und Mutter besprechen Unterlagen am Küchentisch" fetchpriority="high" class=""></div>
+  </div>
+</section>
+<section class="facts" aria-label="Das Wichtigste auf einen Blick"><div class="wrap"><ul data-group><li class="r"><i class="ph ph-hand-heart" aria-hidden="true"></i><strong>Familienbetrieb aus Ammerthal</strong><span>Elena, Alexandra und Ralf Fanderl</span></li><li class="r"><i class="ph ph-house" aria-hidden="true"></i><strong>Beratung bei Ihnen zuhause</strong><span>im Umkreis von ca. 50 km um Amberg</span></li><li class="r"><i class="ph ph-calendar-check" aria-hidden="true"></i><strong>In 5 bis 10 Tagen vor Ort</strong><span>oder zu Ihrem Wunschtermin</span></li></ul></div></section>
+
+<section class="section">
+  <div class="wrap sit-grid">
+    <div class="sit-photos rise">
+      <div class="photo"><img src="assets/img/rollator-betreuerin.jpg" width="1800" height="1350" alt="Betreuer stützt einen älteren Herrn mit Rollator im Wohnzimmer" loading="lazy" class=""></div>
+      <div class="photo"><img src="assets/img/fotoalbum.jpg" width="1800" height="1350" alt="Ältere Dame blättert in einem Fotoalbum" loading="lazy" class=""></div>
+      <div class="photo"><img src="assets/img/sohn-vater.jpg" width="1800" height="1350" alt="Sohn hilft seinem Vater mit dem Rollator" loading="lazy" class=""></div>
+    </div>
+    <div class="rise">
+      <h2>Wenn es zuhause allein nicht mehr geht</h2>
+      <p class="lead" style="margin-top:1rem">Eine 24-Stunden-Betreuung hilft, damit Ihre Angehörigen in ihrem Zuhause bleiben können.</p>
+      <div class="sit-list"><div><h3>Nach dem Krankenhaus</h3><p>Die Entlassung steht bevor, aber allein klappt der Alltag noch nicht.</p></div><div><h3>Bei Demenz</h3><p>Ihre Mutter oder Ihr Vater braucht Orientierung und jemanden, der rund um die Uhr da ist.</p></div><div><h3>Wenn Ihre Kraft nicht mehr reicht</h3><p>Sie pflegen selbst und merken, dass es so nicht weitergehen kann.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="leistungen">
+  <div class="wrap">
+    <div class="services-head rise"><h2>Was Ihre Betreuungskraft übernimmt</h2><p class="lead">Sie lebt mit im Haushalt und ist da, bei den kleinen Handgriffen genauso wie in schwierigen Momenten.</p></div>
+    <div class="services-grid" data-group>
+      <div class="svc r"><h3>Im Alltag</h3><ul class="check-list"><li><i class="ph ph-check" aria-hidden="true"></i>Haushalt und Wäsche</li><li><i class="ph ph-check" aria-hidden="true"></i>Mahlzeiten zubereiten</li><li><i class="ph ph-check" aria-hidden="true"></i>Einkäufe und Besorgungen</li><li><i class="ph ph-check" aria-hidden="true"></i>Spaziergänge und Begleitung</li><li><i class="ph ph-check" aria-hidden="true"></i>Eine feste Tagesstruktur</li></ul></div>
+      <div class="svc r"><h3>In der Betreuung</h3><ul class="check-list"><li><i class="ph ph-check" aria-hidden="true"></i>Grundpflege, z. B. Waschen und Anziehen</li><li><i class="ph ph-check" aria-hidden="true"></i>Hilfe beim Toilettengang</li><li><i class="ph ph-check" aria-hidden="true"></i>Betreuung bei Demenz</li><li><i class="ph ph-check" aria-hidden="true"></i>Auch bei höherem Pflegegrad</li><li><i class="ph ph-check" aria-hidden="true"></i>Gesellschaft und Gespräche</li></ul></div>
+      <div class="svc-short r" id="kurzzeitbetreuung"><h3>Kurzzeitbetreuung zuhause</h3><p>Auch für ein paar Wochen, zum Beispiel acht Wochen nach einer OP, als Auszeit für pflegende Angehörige oder bis ein Heimplatz frei wird.</p><a class="btn btn-light" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=EPrh1cgauUe2HvMaPHXPu1EsKyl7h5tHnTXdQtuc9rlUN0JQUEFRRExWUlhVMlFURk5WVlhBMkpTNy4u" target="_blank" rel="noopener" data-conversion="formular">Rückruf anfordern</a></div>
+    </div>
+    <p class="svc-note">Medizinische Behandlungspflege wie Spritzen oder Wundversorgung übernimmt weiterhin Ihr ambulanter Pflegedienst.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="steps-head rise"><h2>So einfach geht es los</h2><p class="lead">Vom ersten Anruf bis zur Anreise begleiten wir Sie persönlich.</p></div>
+    <ol class="steps" data-group><li class="r"><h3>Sie rufen uns an</h3><p>Erzählen Sie uns kurz, worum es geht. Kostenlos und unverbindlich.</p></li><li class="r"><h3>Wir kommen zu Ihnen nach Hause</h3><p>Wir lernen Ihre Angehörigen kennen und besprechen in Ruhe, was gebraucht wird.</p></li><li class="r"><h3>Die Betreuungskraft zieht ein</h3><p>In 5 bis 10 Tagen oder zu Ihrem Wunschtermin. Wir bleiben die ganze Zeit Ihr Ansprechpartner.</p></li></ol>
+    <div class="steps-cta"><a class="btn btn-primary" href="tel:+4996287409897" data-conversion="anruf"><i class="ph ph-phone" aria-hidden="true"></i>Jetzt anrufen</a></div>
+  </div>
+</section>
+
+<section class="section" id="betreuungskraefte" style="padding-top:0">
+  <div class="wrap qa-grid">
+    <div class="photo rise"><img src="assets/img/kaffee-kueche.jpg" width="1800" height="1200" alt="Betreuerin und ältere Dame beim Kaffee in der Küche" loading="lazy" class=""></div>
+    <div class="rise"><h2>Was Familien uns zuerst fragen</h2><dl class="qa"><div><dt>Ist das legal?</dt><dd>Ja. Unsere Betreuungskräfte kommen überwiegend aus Polen und arbeiten über feste Partneragenturen mit A1-Bescheinigung. Sie sind in ihrem Heimatland sozialversichert.</dd></div><div><dt>Spricht die Betreuungskraft Deutsch?</dt><dd>Ihre Wünsche zu Deutschkenntnissen, Führerschein oder Nichtraucher berücksichtigen wir bei der Auswahl.</dd></div><div><dt>Und wenn es menschlich nicht passt?</dt><dd>Dann tauschen wir die Betreuungskraft auf Ihren Wunsch zeitnah aus.</dd></div></dl></div>
+  </div>
+</section>
+
+<section class="section team" id="ueber-uns">
+  <div class="wrap team-grid">
+    <div class="rise">
+      <h2>Wir sind Herzweg24</h2>
+      <p class="lead">Ein Familienbetrieb, entstanden aus eigener Erfahrung.</p>
+      <p>Als in unserer Familie Pflege nötig wurde, haben wir erlebt, wie viele Fragen offen bleiben und wie schwer gute Hilfe zu finden ist. Deshalb haben wir Herzweg24 gegründet.</p>
+      <p>Alexandra bringt über acht Jahre Erfahrung aus der Pflege mit, Elena ist Sozialpädagogin. Gemeinsam mit Ralf sind wir Ihre festen Ansprechpartner, auch über die Bürozeiten hinaus.</p>
+    </div>
+    <div data-group><div class="people"><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Alexandra Fanderl</strong><span>über 8 Jahre in der Pflege</span></figcaption></figure><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Elena Fanderl</strong><span>Sozialpädagogin</span></figcaption></figure><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Ralf Fanderl</strong><span>Mitinhaber</span></figcaption></figure></div></div>
+  </div>
+</section>
+
+<section class="section" id="kosten">
+  <div class="wrap costs-grid">
+    <div class="rise">
+      <h2>Was kostet <span class="nowrap">24-Stunden-Pflege</span>?</h2>
+      <p class="lead">Jede Situation ist anders, deshalb gibt es keinen Pauschalpreis. Nach dem Beratungsgespräch erhalten Sie ein klares Angebot.</p>
+      <p class="hint"><strong>Gut zu wissen:</strong> Ab Pflegegrad 2 zahlt die Pflegekasse Pflegegeld. Viele Familien nutzen es, um einen Teil der Betreuung zu finanzieren.</p>
+    </div>
+    <div class="factors rise"><h3>Der Preis hängt vor allem ab von</h3><ul class="check-list"><li><i class="ph ph-check" aria-hidden="true"></i>dem Pflegeaufwand</li><li><i class="ph ph-check" aria-hidden="true"></i>den Deutschkenntnissen der Betreuungskraft</li><li><i class="ph ph-check" aria-hidden="true"></i>Einsätzen in der Nacht</li><li><i class="ph ph-check" aria-hidden="true"></i>einem Führerschein</li><li><i class="ph ph-check" aria-hidden="true"></i>der Betreuung von zwei Personen</li></ul><a href="#kosten">Mehr zu Kosten und Zuschüssen</a></div>
+  </div>
+</section>
+
+<section class="section area">
+  <div class="wrap area-box rise">
+    <div><h2>Für Familien in Amberg und der ganzen Oberpfalz</h2><p class="lead">Zum Beratungsgespräch kommen wir im Umkreis von etwa 50 km um Amberg zu Ihnen. Betreuungskräfte vermitteln wir in ganz Deutschland.</p></div>
+    <p class="places"><strong>Unter anderem in:</strong> Amberg, Ammerthal, Sulzbach-Rosenberg, Hirschau, Schwandorf, Burglengenfeld, Nabburg, Neumarkt i. d. OPf., Weiden i. d. OPf., Auerbach i. d. OPf. und Hersbruck.</p>
+  </div>
+</section>
+
+<section class="section faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="rise"><h2>Häufige Fragen zur <span class="nowrap">24-Stunden-Pflege</span></h2><p class="lead">Ihre Frage ist nicht dabei? Rufen Sie uns einfach an.</p></div>
+    <div class="rise"><div class="faq-list"><details><summary>Was bedeutet 24-Stunden-Pflege genau?<i class="ph ph-caret-down" aria-hidden="true"></i></summary><p class="answer">Eine Betreuungskraft wohnt mit im Haushalt Ihres Angehörigen und unterstützt im Alltag und bei der Grundpflege. Sie hat geregelte Pausen und Freizeit, ist aber im Haus und damit da, wenn sie gebraucht wird.</p></details><details><summary>Wie schnell kann eine Betreuungskraft bei uns sein?<i class="ph ph-caret-down" aria-hidden="true"></i></summary><p class="answer">In der Regel innerhalb von 5 bis 10 Tagen nach dem Beratungsgespräch. Wenn Sie einen festen Starttermin brauchen, zum Beispiel die Entlassung aus dem Krankenhaus, planen wir darauf hin.</p></details><details><summary>Was müssen wir zuhause bereitstellen?<i class="ph ph-caret-down" aria-hidden="true"></i></summary><p class="answer">Ein eigenes Zimmer für die Betreuungskraft, einen Internetzugang sowie die Mitbenutzung von Bad und Küche.</p></details><details><summary>Wie oft wechselt die Betreuungskraft?<i class="ph ph-caret-down" aria-hidden="true"></i></summary><p class="answer">Üblich ist ein Wechsel alle 2 bis 3 Monate. Wir begleiten jeden Wechsel persönlich.</p></details><details><summary>Übernimmt die Betreuungskraft auch Pflege?<i class="ph ph-caret-down" aria-hidden="true"></i></summary><p class="answer">Ja, die Grundpflege wie Waschen, Anziehen und Hilfe beim Toilettengang. Medizinische Behandlungspflege wie Spritzen oder Wundversorgung übernimmt ein ambulanter Pflegedienst.</p></details><details><summary>Wo beraten Sie vor Ort?<i class="ph ph-caret-down" aria-hidden="true"></i></summary><p class="answer">Im Umkreis von etwa 50 km um Amberg, zum Beispiel in Sulzbach-Rosenberg, Schwandorf, Neumarkt und Weiden. Außerhalb davon vermitteln wir ebenfalls und beraten Sie telefonisch.</p></details></div></div>
+  </div>
+</section>
+
+<section class="section contact" id="kontakt"><div class="wrap"><div class="contact-inner" data-group>
+  <div class="r">
+    <h2>Sprechen wir über Ihre Situation</h2>
+    <p class="lead">Kostenlos und unverbindlich. Wir hören zu und sagen Ihnen ehrlich, was möglich ist.</p>
+    <a class="contact-phone" href="tel:+4996287409897" data-conversion="anruf">09628 7409897</a>
+    <p class="contact-meta">Mobil: <a href="tel:+491705248684" data-conversion="anruf">0170 5248684</a><br>Mo bis Do 9 bis 18 Uhr, Fr und Sa 9 bis 12 Uhr</p>
+  </div>
+  <div class="contact-actions r">
+    <a class="btn btn-light" href="tel:+4996287409897" data-conversion="anruf"><i class="ph ph-phone" aria-hidden="true"></i>Jetzt anrufen</a>
+    <a class="btn btn-outline-light" href="https://wa.me/491705248684" target="_blank" rel="noopener" data-conversion="whatsapp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Per WhatsApp schreiben</a>
+    <a class="btn btn-outline-light" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=EPrh1cgauUe2HvMaPHXPu1EsKyl7h5tHnTXdQtuc9rlUN0JQUEFRRExWUlhVMlFURk5WVlhBMkpTNy4u" target="_blank" rel="noopener" data-conversion="formular">Rückruf anfordern</a>
+  </div>
+</div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><a class="brand" href="#top" aria-label="Betreuungsdienst Herzweg24, zur Startseite">
+  <img src="assets/img/logo-herzweg24.png" width="58" height="58" alt="">
+  <span class="brand-text"><small>Betreuungsdienst</small><strong>Herzweg<span>24</span></strong></span>
+</a><p>Betreuungsdienst Herzweg24 GbR<br>Kotzheimer Straße 2, 92260 Ammerthal</p></div>
+      <div><h3>Kontakt</h3><ul><li><a href="tel:+4996287409897" data-conversion="anruf">09628 7409897</a></li><li><a href="tel:+491705248684" data-conversion="anruf">0170 5248684</a></li><li><a href="mailto:info@herzweg24.de">info@herzweg24.de</a></li><li><a href="#">Instagram</a></li></ul></div>
+      <div><h3>Seiten</h3><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#kosten">Kosten</a></li><li><a href="#betreuungskraefte">Betreuungskräfte</a></li><li><a href="#ueber-uns">Über uns</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Betreuungsdienst Herzweg24 GbR</span><span><a href="#">Impressum</a><a href="#">Datenschutz</a></span></div>
+  </div>
+</footer>
+<nav class="mobile-bar" aria-label="Schnellkontakt">
+  <a class="call" href="tel:+4996287409897" data-conversion="anruf"><i class="ph ph-phone" aria-hidden="true"></i>Anrufen</a>
+  <a href="https://wa.me/491705248684" target="_blank" rel="noopener" data-conversion="whatsapp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>WhatsApp</a>
+  <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=EPrh1cgauUe2HvMaPHXPu1EsKyl7h5tHnTXdQtuc9rlUN0JQUEFRRExWUlhVMlFURk5WVlhBMkpTNy4u" target="_blank" rel="noopener" data-conversion="formular"><i class="ph ph-chat-circle-text" aria-hidden="true"></i>Rückruf</a>
+</nav>
+<script>
+(function () {
+  var header = document.querySelector('.site-header'), toggle = document.querySelector('.menu-toggle'), nav = document.getElementById('nav');
+  function setOpen(o) { header.classList.toggle('open', o); toggle.setAttribute('aria-expanded', o); toggle.setAttribute('aria-label', o ? 'Menü schließen' : 'Menü öffnen'); toggle.firstElementChild.className = 'ph ' + (o ? 'ph-x' : 'ph-list'); }
+  toggle.addEventListener('click', function () { setOpen(!header.classList.contains('open')); });
+  nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+  // Hero: gestaffelt beim Laden. Restliche Inhalte: einmal beim Hineinscrollen, Staffelung innerhalb einer Gruppe.
+  var hero = document.querySelectorAll('.hero .rise');
+  hero.forEach(function (el, i) { el.style.setProperty('--i', i); });
+  requestAnimationFrame(function () { requestAnimationFrame(function () { hero.forEach(function (el) { el.classList.add('in'); }); }); });
+  document.querySelectorAll('[data-group]').forEach(function (g) { g.querySelectorAll('.r').forEach(function (el, i) { el.classList.add('rise'); el.style.setProperty('--i', i); }); });
+  var items = document.querySelectorAll('main .rise:not(.hero .rise)');
+  if (!('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
