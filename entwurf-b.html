@@ -16,7 +16,7 @@ body { font-size: 1.1rem; }
 h1 { font-weight: 600; letter-spacing: -.03em; }
 h2 { font-weight: 600; letter-spacing: -.025em; }
 .hero { padding: 1rem clamp(.75rem, 1.5vw, 1.25rem) 0; }
-.hero-frame { position: relative; border-radius: 28px; overflow: hidden; min-height: min(760px, calc(100dvh - 8.25rem)); display: flex; align-items: flex-end; }
+.hero-frame { position: relative; border-radius: 28px; overflow: hidden; min-height: min(760px, calc(100dvh - 6.75rem)); display: flex; align-items: flex-end; }
 .hero-media { position: absolute; inset: 0; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(30 20 18 / .55), rgb(30 20 18 / 0) 55%); pointer-events: none; }
@@ -244,6 +244,8 @@ h2 { font-weight: 600; letter-spacing: -.025em; }
 (function () {
   var header = document.querySelector('.site-header'), toggle = document.querySelector('.menu-toggle'), nav = document.getElementById('nav');
   function setOpen(o) { header.classList.toggle('open', o); toggle.setAttribute('aria-expanded', o); toggle.setAttribute('aria-label', o ? 'Menü schließen' : 'Menü öffnen'); toggle.firstElementChild.className = 'ph ' + (o ? 'ph-x' : 'ph-list'); }
+  var sen = document.createElement('div'); sen.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:48px;pointer-events:none'; document.body.prepend(sen);
+  new IntersectionObserver(function (e) { header.classList.toggle('scrolled', !e[0].isIntersecting); }).observe(sen);
   toggle.addEventListener('click', function () { setOpen(!header.classList.contains('open')); });
   nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
   // Hero: gestaffelt beim Laden. Restliche Inhalte: einmal beim Hineinscrollen, Staffelung innerhalb einer Gruppe.

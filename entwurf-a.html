@@ -13,7 +13,7 @@
 <style>
 :root { --font: "Figtree", system-ui, sans-serif; --bg: #fdfbf8; }
 .hero { background: var(--cream); overflow: hidden; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); min-height: min(720px, calc(100dvh - 7rem)); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); min-height: min(720px, calc(100dvh - 5.5rem)); }
 .hero-copy { align-self: center; padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4.5rem) clamp(3rem, 6vw, 5rem) max(1.25rem, calc((100vw - 1200px) / 2)); }
 .hero-copy h1 { max-width: 17ch; font-size: clamp(2.2rem, 1.4rem + 2.4vw, 3.4rem); }
 .hero-copy .lead { margin-top: 1.4rem; max-width: 40ch; color: #4f4744; }
@@ -253,6 +253,8 @@
 (function () {
   var header = document.querySelector('.site-header'), toggle = document.querySelector('.menu-toggle'), nav = document.getElementById('nav');
   function setOpen(o) { header.classList.toggle('open', o); toggle.setAttribute('aria-expanded', o); toggle.setAttribute('aria-label', o ? 'Menü schließen' : 'Menü öffnen'); toggle.firstElementChild.className = 'ph ' + (o ? 'ph-x' : 'ph-list'); }
+  var sen = document.createElement('div'); sen.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:48px;pointer-events:none'; document.body.prepend(sen);
+  new IntersectionObserver(function (e) { header.classList.toggle('scrolled', !e[0].isIntersecting); }).observe(sen);
   toggle.addEventListener('click', function () { setOpen(!header.classList.contains('open')); });
   nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
   // Hero: gestaffelt beim Laden. Restliche Inhalte: einmal beim Hineinscrollen, Staffelung innerhalb einer Gruppe.
