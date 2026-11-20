@@ -35,8 +35,7 @@ HEAD = """<!doctype html>
 """
 
 BRAND = """<a class="brand" href="#top" aria-label="Betreuungsdienst Herzweg24, zur Startseite">
-  <img src="assets/img/logo-herzweg24.png" width="58" height="58" alt="">
-  <span class="brand-text"><small>Betreuungsdienst</small><strong>Herzweg<span>24</span></strong></span>
+  <img src="assets/img/logo-herzweg24-360.png" width="180" height="180" alt="Betreuungsdienst Herzweg24">
 </a>"""
 
 HEADER = f"""<header class="site-header" id="top">
@@ -150,7 +149,7 @@ def page(css, body, html_main):
 A_CSS = """
 :root { --font: "Figtree", system-ui, sans-serif; --bg: #fdfbf8; }
 .hero { background: var(--cream); overflow: hidden; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); min-height: min(720px, calc(100dvh - 4.75rem)); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); min-height: min(720px, calc(100dvh - 7rem)); }
 .hero-copy { align-self: center; padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4.5rem) clamp(3rem, 6vw, 5rem) max(1.25rem, calc((100vw - 1200px) / 2)); }
 .hero-copy h1 { max-width: 17ch; font-size: clamp(2.2rem, 1.4rem + 2.4vw, 3.4rem); }
 .hero-copy .lead { margin-top: 1.4rem; max-width: 40ch; color: #4f4744; }
@@ -356,7 +355,7 @@ body { font-size: 1.1rem; }
 h1 { font-weight: 600; letter-spacing: -.03em; }
 h2 { font-weight: 600; letter-spacing: -.025em; }
 .hero { padding: 1rem clamp(.75rem, 1.5vw, 1.25rem) 0; }
-.hero-frame { position: relative; border-radius: 28px; overflow: hidden; min-height: min(760px, calc(100dvh - 6rem)); display: flex; align-items: flex-end; }
+.hero-frame { position: relative; border-radius: 28px; overflow: hidden; min-height: min(760px, calc(100dvh - 8.25rem)); display: flex; align-items: flex-end; }
 .hero-media { position: absolute; inset: 0; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(30 20 18 / .55), rgb(30 20 18 / 0) 55%); pointer-events: none; }

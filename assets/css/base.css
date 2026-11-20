@@ -31,7 +31,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 6rem; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 8rem; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { margin: 0; font-family: var(--font); font-size: 1.15rem; line-height: 1.65; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
 ::selection { background: var(--red); color: #fff; }
@@ -72,13 +72,10 @@ p { margin: 0; text-wrap: pretty; }
 
 /* Header mit Logo */
 .site-header { position: sticky; top: 0; z-index: 30; background: rgb(255 255 255 / .94); backdrop-filter: blur(10px); border-bottom: 1px solid rgb(36 31 30 / .07); }
-.header-inner { display: flex; align-items: center; gap: 2rem; min-height: 4.75rem; }
-.brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--ink); flex-shrink: 0; }
-.brand img { width: 58px; height: 58px; mix-blend-mode: multiply; }
-.brand-text { display: grid; line-height: 1.1; }
-.brand-text small { font-size: .78rem; color: var(--ink-soft); font-weight: 500; letter-spacing: .01em; }
-.brand-text strong { font-family: var(--display); font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; }
-.brand-text strong span { color: var(--red); }
+.header-inner { display: flex; align-items: center; gap: 2rem; min-height: 7rem; }
+.brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.brand img { width: 96px; height: 96px; mix-blend-mode: multiply; }
+@media (max-width: 900px) { .header-inner { min-height: 5rem; } .brand img { width: 68px; height: 68px; } }
 .main-nav { display: flex; gap: 1.8rem; margin-left: auto; }
 .main-nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 200ms ease; }
 @media (hover: hover) and (pointer: fine) { .main-nav a:hover { color: var(--red-dark); } }
@@ -116,7 +113,8 @@ p { margin: 0; text-wrap: pretty; }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
 .footer-grid a { color: var(--ink-soft); text-decoration: none; }
 .footer-grid a:hover { color: var(--red-dark); }
-.footer-grid .brand { margin-bottom: 1rem; }
+.footer-grid .brand { margin-bottom: 1.25rem; }
+.footer-grid .brand img { width: 120px; height: 120px; }
 .footer-bottom { margin-top: 2.25rem; padding-top: 1.2rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; justify-content: space-between; }
 .footer-bottom a { color: var(--ink-soft); }
 .footer-bottom a + a { margin-left: 1.25rem; }
