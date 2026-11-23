@@ -74,7 +74,7 @@ FAQ = [("Was bedeutet 24-Stunden-Pflege genau?", "Eine Betreuungskraft wohnt mit
        ("Wie oft wechselt die Betreuungskraft?", "Üblich ist ein Wechsel alle 2 bis 3 Monate. Wir begleiten jeden Wechsel persönlich."),
        ("Übernimmt die Betreuungskraft auch Pflege?", "Ja, die Grundpflege wie Waschen, Anziehen und Hilfe beim Toilettengang. Medizinische Behandlungspflege wie Spritzen oder Wundversorgung übernimmt ein ambulanter Pflegedienst."),
        ("Wo beraten Sie vor Ort?", "Im Umkreis von etwa 50 km um Amberg, zum Beispiel in Sulzbach-Rosenberg, Schwandorf, Neumarkt und Weiden. Außerhalb davon vermitteln wir ebenfalls und beraten Sie telefonisch.")]
-PEOPLE = [("Alexandra Fanderl", "über 8 Jahre in der Pflege"), ("Elena Fanderl", "Sozialpädagogin"), ("Ralf Fanderl", "Mitinhaber")]
+PEOPLE = [("Alexandra Fanderl", "über 8 Jahre in der Pflege", "team-alexandra"), ("Elena Fanderl", "Sozialpädagogin", "team-elena"), ("Ralf Fanderl", "Mitinhaber", "team-ralf")]
 PLACES = "Amberg, Ammerthal, Sulzbach-Rosenberg, Hirschau, Schwandorf, Burglengenfeld, Nabburg, Neumarkt i. d. OPf., Weiden i. d. OPf., Auerbach i. d. OPf. und Hersbruck"
 
 def checks(items):
@@ -86,7 +86,7 @@ def faq_block():
 
 def people_block():
     return '<div class="people">' + "".join(
-        f'<figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>{n}</strong><span>{r}</span></figcaption></figure>' for n, r in PEOPLE) + "</div>"
+        f'<figure class="r"><div class="photo">{img(f, n, 960, 1200)}</div><figcaption><strong>{n}</strong><span>{r}</span></figcaption></figure>' for n, r, f in PEOPLE) + "</div>"
 
 FOOTER = f"""</main>
 <footer class="site-footer">
@@ -194,6 +194,7 @@ A_CSS = """
 .steps-cta { text-align: center; margin-top: 3rem; }
 .qa-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
 .qa-grid .photo { aspect-ratio: 4 / 5; }
+.qa-grid .photo img { object-position: 58% 40%; }
 .qa { margin-top: 2rem; display: grid; gap: 1.6rem; }
 .qa dt { font-weight: 600; font-size: 1.2rem; }
 .qa dd { margin: .3rem 0 0; color: var(--ink-soft); }
@@ -201,9 +202,10 @@ A_CSS = """
 .team-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .team-grid p + p { margin-top: 1rem; }
 .team-grid .lead { margin: 1rem 0 1.25rem; }
-.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.people figure { margin: 0; }
-.people .photo-slot { background: #fff; }
+.team-photo { margin: 0; }
+.team-photo .photo { aspect-ratio: 4 / 3; }
+.team-photo .photo img { object-position: 50% 30%; }
+.team-photo figcaption { margin-top: .8rem; color: var(--ink-soft); font-size: 1rem; }
 .people figcaption { margin-top: .75rem; }
 .people strong { display: block; font-weight: 600; }
 .people span { color: var(--ink-soft); font-size: .95rem; }
@@ -304,7 +306,7 @@ def entwurf_a():
 
 <section class="section" id="betreuungskraefte" style="padding-top:0">
   <div class="wrap qa-grid">
-    <div class="photo rise">{img("kaffee-kueche", "Betreuerin und ältere Dame beim Kaffee in der Küche", 1800, 1200)}</div>
+    <div class="photo rise">{img("team-duo", "Alexandra und Elena Fanderl am Stehtisch mit Herzweg24-Tassen", 1800, 1301)}</div>
     <div class="rise"><h2>Was Familien uns zuerst fragen</h2><dl class="qa">{qa}</dl></div>
   </div>
 </section>
@@ -317,7 +319,7 @@ def entwurf_a():
       <p>Als in unserer Familie Pflege nötig wurde, haben wir erlebt, wie viele Fragen offen bleiben und wie schwer gute Hilfe zu finden ist. Deshalb haben wir Herzweg24 gegründet.</p>
       <p>Alexandra bringt über acht Jahre Erfahrung aus der Pflege mit, Elena ist Sozialpädagogin. Gemeinsam mit Ralf sind wir Ihre festen Ansprechpartner, auch über die Bürozeiten hinaus.</p>
     </div>
-    <div data-group>{people_block()}</div>
+    <figure class="team-photo rise"><div class="photo">{img("team-gruppe", "Alexandra, Ralf und Elena Fanderl vor dem Herzweg24-Logo", 1800, 1301)}</div><figcaption>Alexandra, Ralf und Elena Fanderl</figcaption></figure>
   </div>
 </section>
 
@@ -405,12 +407,14 @@ h2 { font-weight: 600; letter-spacing: -.025em; }
 .team-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
 .team-grid p + p { margin-top: 1rem; }
 .team-grid .lead { margin: 1rem 0 1.25rem; }
-.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.people { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .people figure { margin: 0; }
-.people .photo-slot { border-radius: var(--radius); }
+.people .photo { aspect-ratio: 4 / 5; }
+.people .photo img { aspect-ratio: 4 / 5; height: auto; }
 .people figcaption { margin-top: .75rem; }
 .people strong { display: block; font-weight: 600; font-size: 1rem; }
 .people span { color: var(--ink-soft); font-size: .9rem; }
+@media (max-width: 600px) { .people { gap: .6rem; } .people strong { font-size: .92rem; } .people span { font-size: .82rem; line-height: 1.4; } }
 .costs { background: var(--cream); border-radius: 32px; margin-inline: clamp(.75rem, 1.5vw, 1.25rem); }
 .costs-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 5rem); }
 .costs-grid .lead { margin-top: 1rem; }
@@ -595,18 +599,21 @@ h2 { letter-spacing: -.03em; }
 .steps-cta { margin-top: 2.75rem; }
 .qa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
 .qa-grid .photo { aspect-ratio: 4 / 5; }
+.qa-grid .photo img { object-position: 58% 40%; }
 .qa dl { margin: 2rem 0 0; }
 .qa dt { font-weight: 600; font-size: 1.25rem; margin-top: 1.75rem; }
 .qa dd { margin: .4rem 0 0; color: var(--ink-soft); }
 .team { background: #fff; }
 .team-top { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: end; }
 .team-top p + p { margin-top: 1rem; }
-.people { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.people { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
 .people figure { margin: 0; }
-.people .photo-slot { border-radius: var(--radius); aspect-ratio: 4 / 5; }
+.people .photo { aspect-ratio: 4 / 5; }
+.people .photo img { aspect-ratio: 4 / 5; height: auto; }
 .people figcaption { margin-top: .9rem; }
 .people strong { display: block; font-weight: 600; font-size: 1.1rem; }
 .people span { color: var(--ink-soft); font-size: .98rem; }
+@media (max-width: 600px) { .people { gap: .6rem; } .people strong { font-size: .92rem; } .people span { font-size: .82rem; line-height: 1.4; } }
 .costs-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 6vw, 6rem); }
 .costs-grid .lead { margin-top: 1rem; }
 .hint { margin-top: 1.5rem; padding-left: 1.2rem; border-left: 2px solid var(--red); color: var(--ink-soft); font-size: 1.02rem; }
@@ -708,7 +715,7 @@ def entwurf_c():
 <section class="section qa" id="betreuungskraefte" style="padding-top:0">
   <div class="wrap qa-grid">
     <div class="rise"><h2>Was Familien uns zuerst fragen</h2><dl>{qa}</dl></div>
-    <div class="photo rise">{img("kaffee-kueche", "Betreuerin und ältere Dame beim Kaffee in der Küche", 1800, 1200)}</div>
+    <div class="photo rise">{img("team-duo", "Alexandra und Elena Fanderl am Stehtisch mit Herzweg24-Tassen", 1800, 1301)}</div>
   </div>
 </section>
 

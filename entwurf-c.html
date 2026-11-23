@@ -56,18 +56,21 @@ h2 { letter-spacing: -.03em; }
 .steps-cta { margin-top: 2.75rem; }
 .qa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
 .qa-grid .photo { aspect-ratio: 4 / 5; }
+.qa-grid .photo img { object-position: 58% 40%; }
 .qa dl { margin: 2rem 0 0; }
 .qa dt { font-weight: 600; font-size: 1.25rem; margin-top: 1.75rem; }
 .qa dd { margin: .4rem 0 0; color: var(--ink-soft); }
 .team { background: #fff; }
 .team-top { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: end; }
 .team-top p + p { margin-top: 1rem; }
-.people { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.people { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
 .people figure { margin: 0; }
-.people .photo-slot { border-radius: var(--radius); aspect-ratio: 4 / 5; }
+.people .photo { aspect-ratio: 4 / 5; }
+.people .photo img { aspect-ratio: 4 / 5; height: auto; }
 .people figcaption { margin-top: .9rem; }
 .people strong { display: block; font-weight: 600; font-size: 1.1rem; }
 .people span { color: var(--ink-soft); font-size: .98rem; }
+@media (max-width: 600px) { .people { gap: .6rem; } .people strong { font-size: .92rem; } .people span { font-size: .82rem; line-height: 1.4; } }
 .costs-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 6vw, 6rem); }
 .costs-grid .lead { margin-top: 1rem; }
 .hint { margin-top: 1.5rem; padding-left: 1.2rem; border-left: 2px solid var(--red); color: var(--ink-soft); font-size: 1.02rem; }
@@ -180,7 +183,7 @@ h2 { letter-spacing: -.03em; }
 <section class="section qa" id="betreuungskraefte" style="padding-top:0">
   <div class="wrap qa-grid">
     <div class="rise"><h2>Was Familien uns zuerst fragen</h2><dl><dt>Ist das legal?</dt><dd>Ja. Unsere Betreuungskräfte kommen überwiegend aus Polen und arbeiten über feste Partneragenturen mit A1-Bescheinigung. Sie sind in ihrem Heimatland sozialversichert.</dd><dt>Spricht die Betreuungskraft Deutsch?</dt><dd>Ihre Wünsche zu Deutschkenntnissen, Führerschein oder Nichtraucher berücksichtigen wir bei der Auswahl.</dd><dt>Und wenn es menschlich nicht passt?</dt><dd>Dann tauschen wir die Betreuungskraft auf Ihren Wunsch zeitnah aus.</dd></dl></div>
-    <div class="photo rise"><img src="assets/img/kaffee-kueche.jpg" width="1800" height="1200" alt="Betreuerin und ältere Dame beim Kaffee in der Küche" loading="lazy" class=""></div>
+    <div class="photo rise"><img src="assets/img/team-duo.jpg" width="1800" height="1301" alt="Alexandra und Elena Fanderl am Stehtisch mit Herzweg24-Tassen" loading="lazy" class=""></div>
   </div>
 </section>
 
@@ -190,7 +193,7 @@ h2 { letter-spacing: -.03em; }
       <div><h2>Wir sind Herzweg24</h2><p class="lead" style="margin-top:1rem">Ein Familienbetrieb, entstanden aus eigener Erfahrung.</p></div>
       <div><p>Als in unserer Familie Pflege nötig wurde, haben wir erlebt, wie viele Fragen offen bleiben und wie schwer gute Hilfe zu finden ist. Deshalb haben wir Herzweg24 gegründet.</p><p>Alexandra bringt über acht Jahre Erfahrung aus der Pflege mit, Elena ist Sozialpädagogin. Gemeinsam mit Ralf sind wir Ihre festen Ansprechpartner.</p></div>
     </div>
-    <div data-group><div class="people"><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Alexandra Fanderl</strong><span>über 8 Jahre in der Pflege</span></figcaption></figure><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Elena Fanderl</strong><span>Sozialpädagogin</span></figcaption></figure><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Ralf Fanderl</strong><span>Mitinhaber</span></figcaption></figure></div></div>
+    <div data-group><div class="people"><figure class="r"><div class="photo"><img src="assets/img/team-alexandra.jpg" width="960" height="1200" alt="Alexandra Fanderl" loading="lazy" class=""></div><figcaption><strong>Alexandra Fanderl</strong><span>über 8 Jahre in der Pflege</span></figcaption></figure><figure class="r"><div class="photo"><img src="assets/img/team-elena.jpg" width="960" height="1200" alt="Elena Fanderl" loading="lazy" class=""></div><figcaption><strong>Elena Fanderl</strong><span>Sozialpädagogin</span></figcaption></figure><figure class="r"><div class="photo"><img src="assets/img/team-ralf.jpg" width="960" height="1200" alt="Ralf Fanderl" loading="lazy" class=""></div><figcaption><strong>Ralf Fanderl</strong><span>Mitinhaber</span></figcaption></figure></div></div>
   </div>
 </section>
 

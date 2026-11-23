@@ -56,6 +56,7 @@
 .steps-cta { text-align: center; margin-top: 3rem; }
 .qa-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
 .qa-grid .photo { aspect-ratio: 4 / 5; }
+.qa-grid .photo img { object-position: 58% 40%; }
 .qa { margin-top: 2rem; display: grid; gap: 1.6rem; }
 .qa dt { font-weight: 600; font-size: 1.2rem; }
 .qa dd { margin: .3rem 0 0; color: var(--ink-soft); }
@@ -63,9 +64,10 @@
 .team-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .team-grid p + p { margin-top: 1rem; }
 .team-grid .lead { margin: 1rem 0 1.25rem; }
-.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.people figure { margin: 0; }
-.people .photo-slot { background: #fff; }
+.team-photo { margin: 0; }
+.team-photo .photo { aspect-ratio: 4 / 3; }
+.team-photo .photo img { object-position: 50% 30%; }
+.team-photo figcaption { margin-top: .8rem; color: var(--ink-soft); font-size: 1rem; }
 .people figcaption { margin-top: .75rem; }
 .people strong { display: block; font-weight: 600; }
 .people span { color: var(--ink-soft); font-size: .95rem; }
@@ -176,7 +178,7 @@
 
 <section class="section" id="betreuungskraefte" style="padding-top:0">
   <div class="wrap qa-grid">
-    <div class="photo rise"><img src="assets/img/kaffee-kueche.jpg" width="1800" height="1200" alt="Betreuerin und ältere Dame beim Kaffee in der Küche" loading="lazy" class=""></div>
+    <div class="photo rise"><img src="assets/img/team-duo.jpg" width="1800" height="1301" alt="Alexandra und Elena Fanderl am Stehtisch mit Herzweg24-Tassen" loading="lazy" class=""></div>
     <div class="rise"><h2>Was Familien uns zuerst fragen</h2><dl class="qa"><div><dt>Ist das legal?</dt><dd>Ja. Unsere Betreuungskräfte kommen überwiegend aus Polen und arbeiten über feste Partneragenturen mit A1-Bescheinigung. Sie sind in ihrem Heimatland sozialversichert.</dd></div><div><dt>Spricht die Betreuungskraft Deutsch?</dt><dd>Ihre Wünsche zu Deutschkenntnissen, Führerschein oder Nichtraucher berücksichtigen wir bei der Auswahl.</dd></div><div><dt>Und wenn es menschlich nicht passt?</dt><dd>Dann tauschen wir die Betreuungskraft auf Ihren Wunsch zeitnah aus.</dd></div></dl></div>
   </div>
 </section>
@@ -189,7 +191,7 @@
       <p>Als in unserer Familie Pflege nötig wurde, haben wir erlebt, wie viele Fragen offen bleiben und wie schwer gute Hilfe zu finden ist. Deshalb haben wir Herzweg24 gegründet.</p>
       <p>Alexandra bringt über acht Jahre Erfahrung aus der Pflege mit, Elena ist Sozialpädagogin. Gemeinsam mit Ralf sind wir Ihre festen Ansprechpartner, auch über die Bürozeiten hinaus.</p>
     </div>
-    <div data-group><div class="people"><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Alexandra Fanderl</strong><span>über 8 Jahre in der Pflege</span></figcaption></figure><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Elena Fanderl</strong><span>Sozialpädagogin</span></figcaption></figure><figure class="r"><div class="photo-slot">Foto folgt</div><figcaption><strong>Ralf Fanderl</strong><span>Mitinhaber</span></figcaption></figure></div></div>
+    <figure class="team-photo rise"><div class="photo"><img src="assets/img/team-gruppe.jpg" width="1800" height="1301" alt="Alexandra, Ralf und Elena Fanderl vor dem Herzweg24-Logo" loading="lazy" class=""></div><figcaption>Alexandra, Ralf und Elena Fanderl</figcaption></figure>
   </div>
 </section>
 
