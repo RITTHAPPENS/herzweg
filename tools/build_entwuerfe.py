@@ -13,7 +13,7 @@ def btn_form(cls="btn-ghost"):
     return f'<a class="btn {cls}" href="{FORM}" target="_blank" rel="noopener" data-conversion="formular">Rückruf anfordern</a>'
 
 def img(name, alt, w, h, cls="", eager=False):
-    load = 'fetchpriority="high"' if eager else 'loading="lazy"'
+    load = 'fetchpriority="high"' if eager else ('decoding="async"' if eager is None else 'loading="lazy"')
     return f'<img src="assets/img/{name}.jpg" width="{w}" height="{h}" alt="{alt}" {load} class="{cls}">'
 
 HEAD = """<!doctype html>
@@ -86,7 +86,7 @@ def faq_block():
 
 def people_block():
     return '<div class="people">' + "".join(
-        f'<figure class="r"><div class="photo">{img(f, n, 960, 1200)}</div><figcaption><strong>{n}</strong><span>{r}</span></figcaption></figure>' for n, r, f in PEOPLE) + "</div>"
+        f'<figure class="r"><div class="photo">{img(f, n, 960, 1200, eager=None)}</div><figcaption><strong>{n}</strong><span>{r}</span></figcaption></figure>' for n, r, f in PEOPLE) + "</div>"
 
 FOOTER = f"""</main>
 <footer class="site-footer">
