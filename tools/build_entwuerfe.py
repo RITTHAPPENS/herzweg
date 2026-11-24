@@ -42,7 +42,12 @@ HEADER = f"""<header class="site-header" id="top">
   <div class="wrap header-inner">
     {BRAND}
     <nav class="main-nav" id="nav" aria-label="Hauptnavigation">
-      <a href="#leistungen">Leistungen</a><a href="#kosten">Kosten</a><a href="#betreuungskraefte">Betreuungskräfte</a><a href="#ueber-uns">Über uns</a>
+      <a href="#leistungen"><span>Leistungen</span><i class="ph ph-arrow-right nav-arrow" aria-hidden="true"></i></a><a href="#kosten"><span>Kosten</span><i class="ph ph-arrow-right nav-arrow" aria-hidden="true"></i></a><a href="#betreuungskraefte"><span>Betreuungskräfte</span><i class="ph ph-arrow-right nav-arrow" aria-hidden="true"></i></a><a href="#ueber-uns"><span>Über uns</span><i class="ph ph-arrow-right nav-arrow" aria-hidden="true"></i></a><a href="#kontakt" class="nav-mobile-only"><span>Kontakt</span><i class="ph ph-arrow-right nav-arrow" aria-hidden="true"></i></a>
+      <div class="nav-extra">
+        <a class="btn btn-primary" href="{TEL}" data-conversion="anruf"><i class="ph ph-phone" aria-hidden="true"></i>09628 7409897</a>
+        <a class="btn btn-ghost" href="{WA}" target="_blank" rel="noopener" data-conversion="whatsapp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Per WhatsApp schreiben</a>
+        <p><i class="ph ph-clock" aria-hidden="true"></i>Mo bis Do 9 bis 18, Fr und Sa 9 bis 12 Uhr</p>
+      </div>
     </nav>
     <a class="header-phone" href="{TEL}" data-conversion="anruf"><i class="ph ph-phone" aria-hidden="true"></i>09628 7409897</a>
     <a class="btn btn-primary header-cta" href="{FORM}" target="_blank" rel="noopener" data-conversion="formular">Rückruf anfordern</a>
@@ -107,11 +112,13 @@ FOOTER = f"""</main>
 <script>
 (function () {{
   var header = document.querySelector('.site-header'), toggle = document.querySelector('.menu-toggle'), nav = document.getElementById('nav');
-  function setOpen(o) {{ header.classList.toggle('open', o); toggle.setAttribute('aria-expanded', o); toggle.setAttribute('aria-label', o ? 'Menü schließen' : 'Menü öffnen'); toggle.firstElementChild.className = 'ph ' + (o ? 'ph-x' : 'ph-list'); }}
+  function setOpen(o) {{ header.classList.toggle('open', o); document.documentElement.classList.toggle('menu-open', o); toggle.setAttribute('aria-expanded', o); toggle.setAttribute('aria-label', o ? 'Menü schließen' : 'Menü öffnen'); toggle.firstElementChild.className = 'ph ' + (o ? 'ph-x' : 'ph-list'); }}
   var sen = document.createElement('div'); sen.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:48px;pointer-events:none'; document.body.prepend(sen);
   new IntersectionObserver(function (e) {{ header.classList.toggle('scrolled', !e[0].isIntersecting); }}).observe(sen);
   toggle.addEventListener('click', function () {{ setOpen(!header.classList.contains('open')); }});
-  nav.addEventListener('click', function (e) {{ if (e.target.tagName === 'A') setOpen(false); }});
+  nav.addEventListener('click', function (e) {{ if (e.target.closest('a')) setOpen(false); }});
+  document.addEventListener('keydown', function (e) {{ if (e.key === 'Escape' && header.classList.contains('open')) {{ setOpen(false); toggle.focus(); }} }});
+  document.addEventListener('click', function (e) {{ if (header.classList.contains('open') && !header.contains(e.target)) setOpen(false); }});
   // Hero: gestaffelt beim Laden. Restliche Inhalte: einmal beim Hineinscrollen, Staffelung innerhalb einer Gruppe.
   var hero = document.querySelectorAll('.hero .rise');
   hero.forEach(function (el, i) {{ el.style.setProperty('--i', i); }});
