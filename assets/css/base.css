@@ -124,6 +124,8 @@ p { margin: 0; text-wrap: pretty; }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
 .footer-grid a { color: var(--ink-soft); text-decoration: none; }
 .footer-grid a:hover { color: var(--red-dark); }
+.footer-grid a.social { display: inline-flex; align-items: center; gap: .4rem; }
+.footer-grid a.social .ph { font-size: 1.2rem; color: var(--red); }
 .footer-grid .brand { margin-bottom: 1.25rem; }
 .footer-bottom { margin-top: 2.25rem; padding-top: 1.2rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; justify-content: space-between; }
 .footer-bottom a { color: var(--ink-soft); }
